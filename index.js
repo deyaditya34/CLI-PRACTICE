@@ -7,6 +7,11 @@ const processLine = (outputDirectory) => (folderName) => {
     fs.mkdirSync(folderName);
   } else {
     const outDirPath = path.join(outputDirectory, folderName);
+    const outputDirectoryExists = fs.existsSync(outputDirectory);
+
+    if (!outputDirectoryExists) {
+      fs.mkdirSync(outputDirectory);
+    }
     fs.mkdirSync(outDirPath);
   }
 };
@@ -28,10 +33,14 @@ const start = (readFilePath, outputDirectory = "") => {
   });
 };
 
-// start("C:\\Users\\user\\Documents\\Programs\\cli-practice\\folder-list.txt",  "C:\\Users\\user\\Documents\\Programs\\cli-practice\\outputFileFolder");
+// start("C:\\Users\\user\\Documents\\Programs\\cli-practice\\folder-list.txt",  "C:\\Users\\user\\Documents\\Programs\\cli-practice\\outputFolder");
 
-const processArgv = process.argv
+const processArgv = process.argv;
 
-if (processArgv.length > 2) {
-  start(processArgv[2])
+if (processArgv.length === 3) {
+  start(processArgv[2]);
+}
+
+if (processArgv.length === 4) {
+  start(processArgv[2], processArgv[3]);
 }
