@@ -46,3 +46,4 @@ if (processArgv.length === 4) {
 }
 
 const a = "name";
+const b = "name2"
