@@ -44,6 +44,3 @@ if (processArgv.length === 3) {
 if (processArgv.length === 4) {
   start(processArgv[2], processArgv[3]);
 }
-
-const a = "name";
-const b = "name2"
