@@ -33,8 +33,6 @@ const start = (readFilePath, outputDirectory = "") => {
   });
 };
 
-// start("C:\\Users\\user\\Documents\\Programs\\cli-practice\\folder-list.txt",  "C:\\Users\\user\\Documents\\Programs\\cli-practice\\outputFolder");
-
 const processArgv = process.argv;
 
 if (processArgv.length === 3) {
